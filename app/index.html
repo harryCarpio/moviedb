@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="movieApp">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Movie App</title>
+
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-animate/angular-animate.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="libs/angular-resource/angular-resource.js"></script>
+    <script src="libs/ngstorage/ngStorage.js"></script>
+
+    <script src="res/js/app.js"></script>
+    <script src="res/js/directives.js"></script>
+    <script src="res/js/movie/movie.controller.js"></script>
+    <script src="res/js/movie/movie.service.js"></script>
+
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="libs/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+    <link href="res/css/app.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation">
+              <a href="#/movies">Movies</a>
+            </li>
+            <li role="presentation">
+              <a href="#/actors">Actors</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="#/home"> <h3 class="text-muted">MovieDB</h3></a>
+      </div>
+      <div ng-view></div>
+    </div>
+    <script src="libs/angular-xeditable/dist/js/xeditable.js"></script>
+  </body>
+</html>

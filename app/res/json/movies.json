@@ -1,0 +1,37 @@
+[{
+  "id": 0,
+  "name": "Room",
+  "release_year": 2015,
+  "gross_income": "14161502",
+  "actors": "Brie Larson",
+  "director_name": "Lenny Abrahamson",
+  "rating": "8,3",
+  "genre": "Drama"
+}, {
+  "id": 1,
+  "name": "Spotlight ",
+  "release_year": 2015,
+  "gross_income": "41562351",
+  "actors": "Mark Ruffalo",
+  "director_name": "Tom McCarthy",
+  "rating": "8,2",
+  "genre": "Biography;Drama;History;Thriller"
+}, {
+  "id": 2,
+  "name": "Deadpool",
+  "release_year": 2016,
+  "gross_income": "315915561",
+  "actors": "Ryan Reynolds",
+  "director_name": "Tim Miller",
+  "rating": "8,4",
+  "genre": "Action;Adventure;Comedy;Sci-Fi"
+}, {
+  "id": 3,
+  "name": "Inception",
+  "release_year": 2010,
+  "gross_income": "292568851",
+  "actors": "Leonardo DiCaprio",
+  "director_name": "Christopher Nolan",
+  "rating": "8,8",
+  "genre": "Action;Mystery;Thriller;Sci-Fi"
+}]

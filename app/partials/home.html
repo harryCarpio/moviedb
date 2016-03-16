@@ -1,0 +1,18 @@
+<div class="row marketing">
+
+  <div ng-repeat="movie in movies | orderBy:'-release_year' | limitTo: 3">
+
+      <!--<div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>-->
+
+      <h3>
+        <strong>{{movie.name}}</stong>({{movie.rating}})</h3>
+      <p>{{movie.release_year}}
+        {{movie.gross_income}}</p>
+      <p>{{movie.director_name}}
+        <br/>
+        {{movie.genre}}</p>
+
+
+    <hr/>
+  </div>
+</div>

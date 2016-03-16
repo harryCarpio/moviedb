@@ -1,0 +1,36 @@
+<div class="body">
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="first_name">First name</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="first_name" ng-model="newFirstName" placeholder="First name" type="text">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="last_name">Last name</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="last_name" ng-model="newLastName" placeholder="Last name" type="text">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="gender">Gender</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="gender" ng-model="newGender" placeholder="Gender" type="text">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="birth_date">Birth date</label>
+      <div class="col-sm-10">
+        <input date-time format="yyyy-MM-dd HH:mm">
+        <!--
+        <date-picker ng-model="newBirthDate" format="yyyy-mm-dd"></date-picker>
+        <input datepicker='' ng-model='newBirthDate' type='text'></input>
+        <input f-datepicker="" type="text" value="">
+        <input class="form-control" id="birth_date" ng-model="newBirthDate" placeholder="" type="date">
+        -->
+      </div>
+    </div>
+  </form>
+</div>
+<button class="btn btn-primary" ng-click="add()" type="button">Save</button>
+<button class="btn btn-primary" ng-click="go('/actors')" type="button">Back</button>

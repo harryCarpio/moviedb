@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="large-10 columns">
+    <a href="#/movies/new">Add Movie</a>
+    <div ng-repeat="movie in movies | orderBy:'-release_year'">
+      <div class="row">
+        <!--<div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>-->
+        <div class="large-10 columns">
+          <h3>
+            <strong>{{movie.name}}</stong>({{movie.rating}})</h3>
+          <p>{{movie.release_year}}
+            {{movie.gross_income}}</p>
+          <p>{{movie.director_name}}
+            <br/>
+            {{movie.genre}}</p>
+          <a ng-click="detail(movie)">Detail</a>
+          |
+          <a ng-click="delete(movie)">Delete</a>
+        </div>
+      </div>
+      <hr/>
+    </div>
+
+  </div>
+</div>

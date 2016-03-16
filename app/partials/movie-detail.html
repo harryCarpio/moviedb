@@ -1,0 +1,71 @@
+<div class="body">
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2">
+        <strong>Name</strong>
+      </label>
+      <div class="col-sm-10">
+        {{current_movie.name}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2">
+        <strong>Release year</strong>
+      </label>
+      <div class="col-sm-10">
+        {{current_movie.release_year}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2">
+        <strong>Gross income</strong>
+      </label>
+      <div class="col-sm-10">
+        {{current_movie.gross_income}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2">
+        <strong>Actors</strong>
+      </label>
+      <div class="col-sm-10">
+        <div ng-repeat="actor in current_movie.actors">
+          <div class="large-10 columns">
+            {{actor.first_name}}
+            {{actor.last_name}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2">
+        <strong>Director name</strong>
+      </label>
+      <div class="col-sm-10">
+        {{current_movie.director_name}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2">
+        <strong>Rating</strong>
+      </label>
+      <div class="col-sm-10">
+        {{current_movie.rating}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2">
+        <strong>Genre</strong>
+      </label>
+      <div class="col-sm-10">
+        {{current_movie.genre}}
+      </div>
+    </div>
+
+  </div>
+</div>
+<button class="btn btn-primary" ng-click="edit(current_movie)" type="button">Edit</button>

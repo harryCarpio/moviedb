@@ -1,0 +1,104 @@
+<div class="body">
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="name">Name</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="name" ng-model="current_movie.name" placeholder="Name" type="text" value="{{current_movie.name}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="release_year">Release year</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="release_year" ng-model="current_movie.release_year" placeholder="Release year" type="number" value="{{current_movie.release_year}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="gross_income">Gross income</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="gross_income" ng-model="current_movie.gross_income" placeholder="Gross income" type="number" value="{{current_movie.gross_income}}">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="director_name">Director name</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="director_name" ng-model="current_movie.director_name" placeholder="Director" type="text" value="{{current_movie.director_name}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="rating">Rating</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="rating" ng-model="current_movie.rating" placeholder="Rating" type="number" value="{{current_movie.rating}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="release_year">Genre</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="genre" ng-model="current_movie.genre" placeholder="Genre" type="text" value="{{current_movie.genre}}">
+      </div>
+    </div>
+
+  </form>
+
+  <div>
+    <label class="col-sm-2 control-label" for="actors">Actors</label>
+    <div class="col-sm-10">
+      <!--<input class="form-control" id="actors" placeholder="Actors" type="text" value="{{current_movie.actors}}"  ng-model="current_movie.actors">-->
+      <form editable-form name="tableform" onaftersave="saveTable()" oncancel="cancelAddActor()">
+
+        <!-- table -->
+        <table class="table table-bordered table-hover table-condensed">
+          <tr style="font-weight: bold">
+            <td style="width:20%">First name</td>
+            <td style="width:20%">Last name</td>
+            <td style="width:20%">Gender</td>
+            <td style="width:20%">Birth date</td>
+            <td style="width:20%">
+              <span ng-show="tableform.$visible">Action</span>
+            </td>
+          </tr>
+          <tr ng-repeat="actor in current_movie.actors">
+            <td>
+              <span e-form="tableform" editable-text="actor.first_name">
+                {{ actor.first_name || 'empty' }}
+              </span>
+            </td>
+            <td>
+              <span e-form="tableform" editable-text="actor.last_name">
+                {{ actor.last_name || 'empty' }}
+              </span>
+            </td>
+            <td>
+              <span e-form="tableform" editable-text="actor.gender">
+                {{ actor.gender || 'empty' }}
+              </span>
+            </td>
+            <td>
+              <span e-form="tableform" editable-text="actor.birth_date">
+                {{ actor.birth_date || 'empty' }}
+              </span>
+            </td>
+            <td>
+              <button class="btn btn-danger pull-right" ng-click="deleteUser(user.id)" ng-show="tableform.$visible" type="button">Del</button>
+            </td>
+          </tr>
+        </table>
+
+        <!-- buttons -->
+        <div class="btn-edit">
+          <button class="btn btn-default" ng-click="tableform.$show()" ng-show="!tableform.$visible" type="button">
+            edit
+          </button>
+        </div>
+        <div class="btn-form" ng-show="tableform.$visible">
+          <button class="btn btn-default pull-right" ng-click="addActor()" ng-disabled="tableform.$waiting" type="button">Add row</button>
+          <button class="btn btn-primary" ng-disabled="tableform.$waiting" type="submit">OK</button>
+          <button class="btn btn-default" ng-click="tableform.$cancelAddActor()" ng-disabled="tableform.$waiting" type="button">X</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+<button class="btn btn-primary" ng-click="save(current_movie)" type="button">Save</button>
+<button class="btn btn-primary" ng-click="cancel(edited_movie)" type="button">Cancel</button>
